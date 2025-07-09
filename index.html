@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Index</title>
+</head>
+<body>
+    <!-- inline js example -->
+    <button onclick="alert('Inline JS example')"> Inline js click here</button>
+    <!-- inline end -->
+     <br><hr>
+    <!-- internal js example -->
+     <button onclick="show_msg()">internal js click here</button>
+
+     <script>
+        function show_msg()
+        {
+            alert("Internal js example")
+        }
+     </script>
+     <!-- internal end -->
+      <br><hr>
+      <!-- external js example -->
+
+      <button onclick="show_dk()">External js click here</button>
+
+      <button onclick="showd()">Message</button>
+      <script type="text/Javascript" src="js/script.js"></script>
+      <!-- external end -->
+      <h1>hello world</h1>
+      <script>
+        document.write("<h1>hello pune</h1>");
+        console.log("hello its working");
+        document.write(50+90);
+        console.log(40+30);
+      </script>
+</body>
+</html>
