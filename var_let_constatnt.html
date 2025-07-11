@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Variable types</title>
+    </head>
+    <body>
+        <script>
+        // var can be reassign and redeclare values.
+        var fname="Deepak";
+        var fname="Nayan";
+
+        document.write(fname);
+
+        // let can be only redeclare values.
+        let lname="Kale";
+        lname="King";
+        document.write(lname);
+
+        // const can't be change once assign value.
+        const pi = 3.14;
+        
+        document.write(pi);
+
+        function example(){
+            var x=1;
+            let y=2;
+            const z=3;
+
+            if(true){
+                var x = 10;
+                let y = 20;
+                const z = 30;
+                document.write("<br>");
+                document.write(x+" "+y+" "+z);
+                document.write("<br>");
+            }
+
+            document.write(x+" "+y+" "+z);
+        }
+        example();
+    </script>
+    </body>
+</html>

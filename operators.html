@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators example</title>
+</head>
+<body>
+    <script>
+        var a = 17; // +,-,*,/,**,++,-- 
+        var b = 3;
+        var c = a+b;
+        var d = a ** b; // 17 power 3
+        c++;
+        c--;
+        c++;
+        c++;
+        c++;
+        document.write(c);
+        document.write("<br>");
+        document.write(d);
+        document.write("<br>");
+    </script>
+    <script>
+        var p=13;
+        var q = "13";  // == only check whether values are equal
+        if(p==q){
+            document.write("True");
+        }else{
+            document.write("False");
+        }
+        document.write("<br>"); // === check values and datatypes are equal or not.
+        if(p===q){
+            document.write("True");
+        }else{
+            document.write("False");
+        }
+        document.write("<br>");
+    </script>
+    <script>
+        var age = 19; // AND Operator ( && )
+        if(age>=18 && age<=100){
+            document.write("Eligeble for vote");
+        }else{
+            document.write("Not Eligeble for vote");
+        }
+        document.write("<br>");
+    </script>
+    <script>
+        var day = "Monday"; // OR Operator ( || )
+        if(day=="Saturday" || day=="Sunday"){
+            document.write("Its Weekend Holiday");
+        }else{
+            document.write("Its Weekdays");
+        }
+        document.write("<br>");
+    </script>
+    <script>
+        let age1 = 18; // ternory operator ? ,syntax = variable name = its condition-to-check ?(ternory operator) "if statment" : "else statment"
+        let eligible = (age1>=18) ? "Eligible for vote" : "Not eligible for vote";
+        document.write(eligible);
+    </script>
+</body>
+</html>
