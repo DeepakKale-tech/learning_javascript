@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+       var a = ["Deepak", 24, "Male", "Software Developer"];
+       document.write(a+"<br>");
+       a[1] = 25;
+       document.write(a+"<br>");
+       a[3] = "Dking";
+       document.write(a+"<br>");
+    </script>
+    <!-- Sorting and Reverse -->
+     <script>
+        var b = ["Dking","God of War","Prince of Persia","Tekken","Mortal Kombat"];
+        document.write(b+"<br>");
+        b.sort();
+        document.write(b+"<br>");
+        b.reverse();
+        document.write(b+"<br>");
+     </script>
+     <!-- Pop and Push -->
+      <script>
+        var b = ["Dking","God of War","Prince of Persia","Tekken","Mortal Kombat"];
+        document.write(b+"<br>");
+        b.pop();
+        document.write(b+"<br>");
+        b.pop();
+        b.pop();
+        document.write(b+"<br>");
+        b.push("Batman Arkhm Knight");
+        document.write(b+"<br>");
+      </script>
+      <!-- Shift and Unshift -->
+       <script>
+        var c = ["Dking","God of War","Prince of Persia","Tekken","Mortal Kombat"];
+        document.write(c+"<br>");
+        c.shift();
+        c.shift();
+        document.write(c+"<br>");
+        c.unshift("Deepak")
+        c.unshift("Kale");
+        document.write(c+"<br>");
+       </script>
+       <!-- concat and Join -->
+        <script>
+        var a = ["Dking","God of War","Prince of Persia","Tekken","Mortal Kombat"];
+        var b = ["Deepak","Olympus","Asgard","Vallhala"];
+        var c = ["King of Steel","Ben 10","Avengers","Spider-Man"];
+
+        var con = a.concat(a,c);
+        document.write(con+"<br>");
+        var j = c.join("/");
+        document.write(j+"<br>");
+        </script>
+</body>
+</html>
