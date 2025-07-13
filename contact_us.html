@@ -13,15 +13,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h3 class="text-center">Contact Us</h3>
-                            <form class="border border-black m-2 p-2">
+                            <form id="contactform" class="border border-black m-2 p-2" onsubmit="return validate()">
                                 <div class="mb-3">
                                     <label for="Name"
                                         class="form-label">Enter Your
                                         Name</label>
                                     <input type="text"
                                         class="form-control"
-                                        id="Name"
+                                        id="Name" name="Name"
                                         placeholder="Enter Name">
+                                        <span class="text-danger" id="nameerror"></span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Email"
@@ -29,8 +30,9 @@
                                         Id</label>
                                     <input type="email"
                                         class="form-control"
-                                        id="Email"
+                                        id="Email" name="Email"
                                         placeholder="Enter Email">
+                                        <span class="text-danger" id="emailerror"></span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Phone"
@@ -38,14 +40,16 @@
                                         Number</label>
                                     <input type="number"
                                         class="form-control"
-                                        id="Phone"
+                                        id="Phone" name="Phone"
                                         placeholder="Enter Mobile No.">
+                                        <span class="text-danger" id="mobileerror"></span>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Message</label>
                                     <textarea class="form-control"
-                                        rows="3"
+                                        rows="3" id="Message" name="Message"
                                         placeholder="Message"></textarea>
+                                        <span class="text-danger" id="msgerror"></span>
                                 </div>
                                 <div class="d-grid">
                                     <button type="submit"
@@ -53,12 +57,71 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-6">
-                        </div>
                     </div>
                 </div>
             </section>
         </main>
         <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            function validate()
+            {
+                // Get Form Values
+                const name = document.getElementById("Name").value.trim();
+                const email = document.getElementById("Email").value.trim();
+                const mobile = document.getElementById("Phone").value.trim();
+                const message = document.getElementById("Message").value.trim();
+
+                // Error span 
+                const nameError = document.getElementById("nameerror");
+                const emailError = document.getElementById("emailerror");
+                const mobileError = document.getElementById("mobileerror");
+                const messageError = document.getElementById("msgerror");
+                
+                // Clear previous error message
+                nameError.textContent = "";
+                emailError.textContent = "";
+                mobileError.textContent = "";
+                messageError.textContent = "";
+
+                let isValid = true;
+
+                // Validate Fields
+                if (name===""){
+                    nameError.textContent = "Please Enter Your Name";
+                    isValid=false;
+                }else if(name.length<=3)
+                {
+                    nameError.textContent = "Name must be atleast 3 character";
+                    isValid=false;
+                }
+                if(email==="")
+                {
+                    emailError.textContent = "Please Enter Your Email";
+                    isValid=false;
+                }else if(!/^\S+@\S+\.\S+$/.test(email))
+                {
+                    emailError.textContent = "Email must have @ or . symbols";
+                    isValid=false;
+                }
+                if(mobile==="")
+                {
+                    mobileError.textContent = "Please Enter Your Mobile Number";
+                    isValid=false;
+                }else if(!/^\d{10}$/.test(mobile))
+                {
+                    mobileError.textContent = "Please Enter a Valid 10-digit number";
+                    isValid=false;
+                }
+                if(message==="")
+                {
+                    messageError.textContent = "Please Enter your message";
+                    isValid=false;
+                }
+                if(isValid){
+                    alert("Form Submitted Successfully!");
+                }
+                return isValid; // prevent form submission if invalid
+            }
+        </script>
     </body>
 </html>

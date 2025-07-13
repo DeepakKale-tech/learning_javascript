@@ -5,35 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <main>
             <section>
+                <!-- d-flex justify-content-center align-items-center vh-100 -->
                 <div class="container">
                     <h3>Arithmatic Operations Using Function</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
-                                <form class="border border-black">
+                                <form name="myform" class=" border border-black">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="first_value"
+                                            <label for="first"
                                                 class="form-label">Enter first
                                                 value</label>
                                             <input type="number"
                                                 class="form-control"
-                                                id="first_value"
+                                                id="first"
+                                                name="first"
                                                 placeholder="Enter a Value">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="second_value"
+                                            <label for="second"
                                                 class="form-label">Enter second
                                                 value</label>
                                             <input type="number"
                                                 class="form-control"
-                                                id="second_value"
+                                                id="second"
+                                                name="second"
                                                 placeholder="Enter a Value">
                                         </div>
                                     </div>
@@ -44,29 +48,89 @@
                                             <input type="number"
                                                 class="form-control"
                                                 id="result_value"
-                                                placeholder="Result">
+                                                name="result_value"
+                                                placeholder="Result" disabled>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 ">
                                             <button type="button"
-                                                class="btn btn-danger m-2">+</button>
+                                                class="btn btn-danger m-2"
+                                                onclick="add()">+</button>
                                             <button type="button"
-                                                class="btn btn-primary m-2">-</button>
+                                                class="btn btn-primary m-2"
+                                                onclick="sub()">-</button>
                                             <button type="button"
-                                                class="btn btn-danger m-2">*</button>
+                                                class="btn btn-danger m-2"
+                                                onclick="multi()">*</button>
                                             <button type="button"
-                                                class="btn btn-primary m-2">/</button>
+                                                class="btn btn-primary m-2"
+                                                onclick="div()">/</button>
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                                <script>
+                                    var a,b,result;
 
+                                    function add()
+                                    {
+                                        // a=Number(document.myform.first.value);
+                                        // b=Number(document.myform.second.value);
+
+                                        a=Number(document.getElementById("first").value);
+                                        b=Number(document.getElementById("second").value);
+
+                                        result = a+b;
+                                        // document.myform.result_value.value=result.toFixed(3);
+                                        document.getElementById("result_value").value=result.toFixed(3);
+                                    }
+
+                                    function sub()
+                                    {
+                                        // a=Number(document.myform.first.value);
+                                        // b=Number(document.myform.second.value);
+
+                                        a=Number(document.getElementById("first").value);
+                                        b=Number(document.getElementById("second").value);
+
+                                        result = a-b;
+                                        document.getElementById("result_value").value=result.toFixed(3);
+                                    }
+
+                                    function multi()
+                                    {
+                                        // a=Number(document.myform.first.value);
+                                        // b=Number(document.myform.second.value);
+
+                                        a=Number(document.getElementById("first").value);
+                                        b=Number(document.getElementById("second").value);
+
+                                        result = a*b;
+                                        // document.myform.result_value.value=result.toFixed(3);
+                                        document.getElementById("result_value").value=result.toFixed(3);
+                                    }
+
+                                    function div()
+                                    {
+                                        // a=Number(document.myform.first.value);
+                                        // b=Number(document.myform.second.value);
+
+                                        a=Number(document.getElementById("first").value);
+                                        b=Number(document.getElementById("second").value);
+
+                                        result = a/b;
+                                        // document.myform.result_value.value=result.toFixed(3);
+                                        document.getElementById("result_value").value=result.toFixed(3);
+                                        // toFixed is used to show how many values after .(dot) in calculation to show like here 5.765 ,0.533,4.000s
+                                    }
+
+                                </script>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
+
             </section>
         </main>
 
